@@ -1,0 +1,6 @@
+name = "7day-roadmap"
+pages_build_output_dir = "."
+
+[[kv_namespaces]]
+binding = "TASK_STATUS"
+id = "ba41248d455647d4b45dfbe1fd560df5"
