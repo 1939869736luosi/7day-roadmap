@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资源汇总 — 7天 AI 工具链路线图</title>
+    <meta name="description" content="7天 AI 工具链全栈进化路线图的补充资源汇总：精选推文、GitHub 开源项目、工具网站，按主题分类整理。">
+    <link rel="icon" href="assets/favicon.png">
+    <style>
+        :root {
+            --bg: #F3F0E9;
+            --bg-alt: #EBE7DE;
+            --terracotta: #D67052;
+            --terracotta-light: rgba(214, 112, 82, 0.12);
+            --mustard: #F0B857;
+            --mustard-light: rgba(240, 184, 87, 0.15);
+            --navy: #2C3E6B;
+            --navy-light: rgba(44, 62, 107, 0.08);
+            --green: #6B8F5E;
+            --green-light: rgba(107, 143, 94, 0.1);
+            --text: #3B3530;
+            --text-secondary: #6B6560;
+            --text-light: #8C8580;
+            --border: rgba(59, 53, 48, 0.1);
+            --font-serif: Georgia, 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', serif;
+            --font-sans: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            --font-mono: 'SF Mono', Menlo, Consolas, monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* ── Header ── */
+        header {
+            padding: 80px 0 48px;
+            border-bottom: 2px solid var(--terracotta);
+        }
+
+        .header-tag {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            margin-bottom: 16px;
+        }
+
+        header h1 {
+            font-family: var(--font-serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.3;
+            color: var(--text);
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            font-size: 17px;
+            color: var(--text-secondary);
+            font-weight: 300;
+            max-width: 600px;
+        }
+
+        /* ── Stats bar ── */
+        .stats-bar {
+            display: flex;
+            gap: 24px;
+            margin-top: 28px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+        }
+
+        .stat-num {
+            font-family: var(--font-serif);
+            font-size: 28px;
+            font-weight: 400;
+            color: var(--terracotta);
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* ── Nav pills ── */
+        .nav-pills {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            padding: 12px 0;
+        }
+
+        .nav-pills .container {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .nav-pills .container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            white-space: nowrap;
+            border: 1px solid var(--border);
+            transition: all 0.2s;
+        }
+
+        .pill:hover {
+            background: var(--terracotta-light);
+            color: var(--terracotta);
+            border-color: rgba(214, 112, 82, 0.25);
+        }
+
+        /* ── Sections ── */
+        section {
+            padding: 56px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        .deco-line {
+            width: 48px;
+            height: 3px;
+            background: var(--terracotta);
+            border-radius: 2px;
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            font-family: var(--font-serif);
+            font-size: 28px;
+            font-weight: 400;
+            color: var(--text);
+            margin-bottom: 8px;
+            letter-spacing: -0.3px;
+        }
+
+        .section-desc {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 28px;
+        }
+
+        h3 {
+            font-family: var(--font-serif);
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+
+        /* ── Project cards ── */
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .project-card {
+            padding: 24px 20px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: white;
+            transition: box-shadow 0.2s;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 2px 12px rgba(59, 53, 48, 0.06);
+        }
+
+        .project-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            margin-bottom: 6px;
+        }
+
+        .project-card h4 {
+            font-family: var(--font-serif);
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        .project-card h4 a {
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .project-card h4 a:hover {
+            border-bottom-color: var(--terracotta);
+        }
+
+        .project-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        .project-card .features {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tag {
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 3px;
+            background: var(--bg-alt);
+            color: var(--text-light);
+        }
+
+        .tag.terracotta {
+            background: var(--terracotta-light);
+            color: var(--terracotta);
+        }
+
+        .tag.mustard {
+            background: var(--mustard-light);
+            color: #8B6914;
+        }
+
+        .tag.navy {
+            background: var(--navy-light);
+            color: var(--navy);
+        }
+
+        .tag.green {
+            background: var(--green-light);
+            color: var(--green);
+        }
+
+        /* ── Tweet cards ── */
+        .tweet-card {
+            padding: 20px 24px;
+            margin-bottom: 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: white;
+            transition: box-shadow 0.2s;
+        }
+
+        .tweet-card:hover {
+            box-shadow: 0 2px 12px rgba(59, 53, 48, 0.06);
+        }
+
+        .tweet-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .tweet-author {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .tweet-author a {
+            color: var(--navy);
+            text-decoration: none;
+        }
+
+        .tweet-meta {
+            font-size: 12px;
+            color: var(--text-light);
+            display: flex;
+            gap: 12px;
+        }
+
+        .tweet-body {
+            font-size: 14px;
+            line-height: 1.75;
+            color: var(--text-secondary);
+        }
+
+        .tweet-body strong {
+            color: var(--text);
+        }
+
+        /* ── Callout ── */
+        .callout {
+            padding: 20px 24px;
+            margin: 16px 0;
+            border-radius: 4px;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .callout-terracotta {
+            background: var(--terracotta-light);
+            border-left: 3px solid var(--terracotta);
+        }
+
+        .callout-mustard {
+            background: var(--mustard-light);
+            border-left: 3px solid var(--mustard);
+        }
+
+        .callout-navy {
+            background: var(--navy-light);
+            border-left: 3px solid var(--navy);
+        }
+
+        /* ── Full width card ── */
+        .full-card {
+            padding: 28px 24px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: white;
+            margin-bottom: 16px;
+        }
+
+        .full-card h4 {
+            font-family: var(--font-serif);
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        .full-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* ── Back link ── */
+        .back-link {
+            display: inline-block;
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--terracotta);
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        /* ── Footer ── */
+        footer {
+            text-align: center;
+            padding: 48px 0;
+            color: var(--text-light);
+            font-size: 13px;
+        }
+
+        footer a {
+            color: var(--terracotta);
+            text-decoration: none;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 640px) {
+            header h1 {
+                font-size: 26px;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-bar {
+                gap: 16px;
+            }
+
+            .stat-num {
+                font-size: 22px;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+        }
+
+        /* ── Collapse ── */
+        .collapse-toggle {
+            display: inline-block;
+            cursor: pointer;
+            font-size: 13px;
+            color: var(--terracotta);
+            margin-top: 8px;
+            user-select: none;
+        }
+
+        .collapse-toggle:hover {
+            text-decoration: underline;
+        }
+
+        .collapse-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .collapse-content.open {
+            max-height: 2000px;
+        }
+
+        /* ── Subsection divider ── */
+        .sub-divider {
+            width: 24px;
+            height: 2px;
+            background: var(--mustard);
+            border-radius: 1px;
+            margin: 32px 0 24px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <div class="header-tag">资源汇总 · 7DAY ROADMAP</div>
+            <h1>补充资源索引</h1>
+            <p>7天 AI 工具链全栈进化路线图的补充资料——精选推文、开源项目、工具网站，按主题分类整理。</p>
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-num">20</span>
+                    <span class="stat-label">条推文</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">11</span>
+                    <span class="stat-label">个 GitHub 项目</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">4</span>
+                    <span class="stat-label">大主题分类</span>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <!-- Nav -->
+    <nav class="nav-pills">
+        <div class="container">
+            <a href="#wechat" class="pill">📱 微信生态工具</a>
+            <a href="#twitter" class="pill">🐦 X/Twitter 工具 & 推文</a>
+            <a href="#knowledge" class="pill">🧠 知识管理 & NotebookLM</a>
+            <a href="#design" class="pill">🎨 设计与开发</a>
+            <a href="#insights" class="pill">💡 行业洞察</a>
+            <a href="#media" class="pill">🎬 自媒体创作</a>
+            <a href="index.html" class="pill">← 返回路线图</a>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <!-- ═══ 微信生态工具 ═══ -->
+        <section id="wechat">
+            <div class="deco-line"></div>
+            <h2>微信生态工具</h2>
+            <p class="section-desc">围绕微信公众号文章的抓取、格式化、发布，以及聊天记录备份的完整工具链。</p>
+
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-label">批量下载</div>
+                    <h4><a href="https://github.com/qiye45/wechatDownload" target="_blank">wechatDownload</a></h4>
+                    <p>微信公众号文章批量下载工具。无需安装证书，支持 Windows / macOS。可保存为 html / mhtml / md / pdf /
+                        docx，支持评论、合集下载，保存文章内图片、视频、音频文件。</p>
+                    <div class="features">
+                        <span class="tag terracotta">GUI 界面</span>
+                        <span class="tag">多格式导出</span>
+                        <span class="tag">含评论</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-label">文章提取</div>
+                    <h4><a href="https://github.com/dontbesilent2025/extract-getnote-articles"
+                            target="_blank">extract-getnote-articles</a></h4>
+                    <p>Get笔记知识库文案提取工具。Claude Code Skill，支持多线程并发提取（25-30 篇/分钟），断点续传，结构化 Markdown 输出。</p>
+                    <div class="features">
+                        <span class="tag terracotta">Claude Skill</span>
+                        <span class="tag">并行抓取</span>
+                        <span class="tag">断点续传</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-label">文章排版</div>
+                    <h4><a href="https://github.com/iamzifei/wechat-article-formatter-skill"
+                            target="_blank">wechat-article-formatter-skill</a></h4>
+                    <p>Markdown → 微信公众号 HTML 排版工具。Claude Skill，自动上传本地图片、绿色主题、GFM 语法支持、代码高亮。</p>
+                    <div class="features">
+                        <span class="tag terracotta">Claude Skill</span>
+                        <span class="tag">图片上传</span>
+                        <span class="tag">自定义样式</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-label">全链路工具集</div>
+                    <h4><a href="https://github.com/BND-1/wechat_article_skills"
+                            target="_blank">wechat_article_skills</a></h4>
+                    <p>微信公众号文章写作、排版、发布全流程工具集。包含 4 个 Skill：AI 产品经理写作助手、AI 技术写作助手、文章格式化工具、草稿发布工具。</p>
+                    <div class="features">
+                        <span class="tag terracotta">4 合 1</span>
+                        <span class="tag mustard">AI 写作</span>
+                        <span class="tag">自动发布</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-divider"></div>
+            <h3>聊天记录备份</h3>
+
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-label">工具合集</div>
+                    <h4><a href="https://github.com/1939869736luosi/wechat-backup-tools"
+                            target="_blank">wechat-backup-tools</a></h4>
+                    <p>微信聊天记录备份工具合集。汇集 37 个项目的源代码 + 可执行程序 + 说明文档，涵盖密钥提取、PC/Android/iOS 备份、年度报告等分类。</p>
+                    <div class="features">
+                        <span class="tag mustard">37 个项目</span>
+                        <span class="tag">多平台</span>
+                        <span class="tag">含可执行程序</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="callout callout-mustard">
+                <strong>相关推文</strong><br>
+                <strong>@_miaoz_</strong>：提到宝玉 Skills 可用于微信相关内容处理，自己也写了一个插件。<br>
+                <strong>@chg80333</strong>：推荐了一个什么网站数据都可以抓、什么操作都可以 5 分钟转为 Skill 的工具。
+            </div>
+        </section>
+
+        <!-- ═══ X/Twitter 工具 & 精选推文 ═══ -->
+        <section id="twitter">
+            <div class="deco-line"></div>
+            <h2>X/Twitter 工具 & 精选推文</h2>
+            <p class="section-desc">推文抓取归档工具，以及路线图收集过程中发现的有价值推文。</p>
+
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-label">推文归档</div>
+                    <h4><a href="https://github.com/1939869736luosi/x-tweet-archiver"
+                            target="_blank">x-tweet-archiver</a></h4>
+                    <p>下载 X/Twitter 推文并生成推特风格 HTML 阅读页面。配合 AI 编程工具（Claude Code / Gemini CLI / Codex 等），通过 Workflow +
+                        Skill 联动实现一键下载、渲染、本地归档。</p>
+                    <div class="features">
+                        <span class="tag terracotta">Workflow + Skill</span>
+                        <span class="tag">HTML 渲染</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-label">推文转 Markdown</div>
+                    <h4><a href="https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-danger-x-to-markdown"
+                            target="_blank">baoyu-danger-x-to-markdown</a></h4>
+                    <p>宝玉的 X 内容转 Markdown Skill。支持普通推文、Thread 和 X Article 长文，输出带 YAML 前言的 Markdown，可下载媒体文件到本地。</p>
+                    <div class="features">
+                        <span class="tag terracotta">Claude Skill</span>
+                        <span class="tag">媒体下载</span>
+                        <span class="tag">长文支持</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-label">CLI 工具</div>
+                    <h4><a href="https://github.com/Infatoshi/x-cli" target="_blank">x-cli</a></h4>
+                    <p>X/Twitter 命令行工具，直接与 API v2 通信。可在终端中发布推文、搜索、阅读时间线、管理书签。</p>
+                    <div class="features">
+                        <span class="tag navy">CLI</span>
+                        <span class="tag">API v2</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-label">VS Code 扩展</div>
+                    <h4><a href="https://github.com/jarrodwatts/claude-hud" target="_blank">Claude HUD</a></h4>
+                    <p>Claude Code 扩展插件，能实时显示上下文使用率、工具活跃度和进度等信息。</p>
+                    <div class="features">
+                        <span class="tag navy">VS Code</span>
+                        <span class="tag">实时监控</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-divider"></div>
+            <h3>精选推文精华</h3>
+
+            <!-- 推文：信息管线 -->
+            <div class="tweet-card">
+                <div class="tweet-header">
+                    <span class="tweet-author"><a href="https://x.com/runes_leo" target="_blank">Leo
+                            @runes_leo</a></span>
+                    <span class="tweet-meta"><span>❤️ —</span><span>🔁 —</span></span>
+                </div>
+                <div class="tweet-body">
+                    <strong>X 内容解读管线</strong>：扔个 X 链接，30 秒拿到核心观点 + 逻辑硬伤 + 行动项。五层串起来——Puppeteer MCP 抓取、Jina Reader
+                    转文本、意图识别路由、批判性分析、Obsidian 归档。TwitterAPI io $0.15/千条。
+                </div>
+            </div>
+
+            <div class="tweet-card">
+                <div class="tweet-header">
+                    <span class="tweet-author"><a href="https://x.com/ohxiyu" target="_blank">xiyu @ohxiyu</a></span>
+                    <span class="tweet-meta"><span>X Article 长文</span></span>
+                </div>
+                <div class="tweet-body">
+                    <strong>让 AI Agent 主动帮你刷信息流</strong>：构建受控的主动情报系统。大部分人搭的 Agent 本质是高级问答机，你问它才动。而你自己在干 AI
+                    最擅长的活：大海捞针式的信息扫描。提出了从被动 Agent 到主动情报系统的思路。
+                </div>
+            </div>
+
+            <div class="tweet-card">
+                <div class="tweet-header">
+                    <span class="tweet-author"><a href="https://x.com/vista8" target="_blank">向阳乔木 @vista8</a></span>
+                    <span class="tweet-meta"><span>X Article 长文</span></span>
+                </div>
+                <div class="tweet-body">
+                    <strong>一万字提示词 + 10 个文件，给 AI 造一个"数字灵魂"</strong>：基于 Claude Code + Obsidian 的个人助理探索。AI
+                    完全理解你当下的重点、后续安排，并主动给出建议，像活了一样。
+                </div>
+            </div>
+
+            <div class="tweet-card">
+                <div class="tweet-header">
+                    <span class="tweet-author"><a href="https://x.com/MinLiBuilds" target="_blank">实践哥MinLi
+                            @MinLiBuilds</a></span>
+                    <span class="tweet-meta"><span>❤️ 759</span><span>🔄 179</span><span>👁️ 221k</span><span>🔖
+                            1678</span></span>
+                </div>
+                <div class="tweet-body">
+                    <strong>克隆"宝玉"保姆教程</strong>：用 Gemini + NotebookLM 打造 24h AI 首席顾问。用宝玉 Skills 抓取公开数据 → NotebookLM 做
+                    RAG → Gemini GEM 注入灵魂。数字宝玉会说"Stop. 这是一个典型的伪需求"——比 99% 的产品经理都清醒。
+                </div>
+            </div>
+
+            <div class="tweet-card">
+                <div class="tweet-header">
+                    <span class="tweet-author"><a href="https://x.com/QingQ77" target="_blank">Geek Lite
+                            @QingQ77</a></span>
+                    <span class="tweet-meta"><span>❤️ 99</span><span>👁️ 7.2k</span></span>
+                </div>
+                <div class="tweet-body">
+                    推荐了 <strong>x-cli</strong> — 一个针对 X/Twitter 的 CLI 工具，直接与 API v2 通信。发布推文、搜索、阅读时间线、管理书签——全从终端操作。
+                </div>
+            </div>
+
+            <div class="tweet-card">
+                <div class="tweet-header">
+                    <span class="tweet-author"><a href="https://x.com/xiaoerzhan" target="_blank">小耳 Jane
+                            @xiaoerzhan</a></span>
+                    <span class="tweet-meta"><span>—</span></span>
+                </div>
+                <div class="tweet-body">
+                    发布了 X 推文抓取工具的升级——支持抓取后生成 md 格式文档。收到大量 Star 和社区反馈。
+                </div>
+            </div>
+
+            <span class="collapse-toggle" onclick="toggleCollapse('more-tweets')">展开更多推文 ▾</span>
+            <div class="collapse-content" id="more-tweets">
+
+                <div class="tweet-card" style="margin-top: 12px;">
+                    <div class="tweet-header">
+                        <span class="tweet-author"><a href="https://x.com/HuoQubot" target="_blank">HuoQubot</a></span>
+                    </div>
+                    <div class="tweet-body">分享了 AI 工具链相关的实用信息和工具推荐。</div>
+                </div>
+
+                <div class="tweet-card">
+                    <div class="tweet-header">
+                        <span class="tweet-author"><a href="https://x.com/FLMdongtianfudi"
+                                target="_blank">FLMdongtianfudi</a></span>
+                    </div>
+                    <div class="tweet-body">分享了 AI 编程和工具链方面的见解。</div>
+                </div>
+
+                <div class="tweet-card">
+                    <div class="tweet-header">
+                        <span class="tweet-author"><a href="https://x.com/FFEE_2025"
+                                target="_blank">FFEE_2025</a></span>
+                    </div>
+                    <div class="tweet-body">分享了 AI 相关工具和方法论。</div>
+                </div>
+
+                <div class="tweet-card">
+                    <div class="tweet-header">
+                        <span class="tweet-author"><a href="https://x.com/imaxichuhai" target="_blank">阿西_出海
+                                @imaxichuhai</a></span>
+                    </div>
+                    <div class="tweet-body">
+                        <strong>Obsidian Skill</strong>：一句话就能生成可视化手绘风结构图。可用来做配图、快速可视化理解知识点、制作口播白板内容。
+                    </div>
+                </div>
+
+                <div class="tweet-card">
+                    <div class="tweet-header">
+                        <span class="tweet-author"><a href="https://x.com/Assassin_Malvo"
+                                target="_blank">Assassin_Malvo</a></span>
+                    </div>
+                    <div class="tweet-body">分享了 Claude Code Skills 相关的工具和经验。</div>
+                </div>
+
+                <div class="tweet-card">
+                    <div class="tweet-header">
+                        <span class="tweet-author"><a href="https://x.com/sitinme" target="_blank">sitin
+                                @sitinme</a></span>
+                    </div>
+                    <div class="tweet-body">
+                        转推并推荐了 <strong>@JamesAI</strong> 的 AI 工具链搭建教程，评价"太强了！马上搞起来！"
+                    </div>
+                </div>
+
+                <div class="tweet-card">
+                    <div class="tweet-header">
+                        <span class="tweet-author"><a href="https://x.com/grok" target="_blank">Grok @grok</a></span>
+                        <span class="tweet-meta"><span>👁️ 121</span></span>
+                    </div>
+                    <div class="tweet-body">
+                        推荐了 <strong>Claude HUD</strong> 插件 — Claude Code 的 VS Code 扩展，能实时显示上下文使用率、工具活跃度和进度。GitHub:
+                        jarrodwatts/claude-hud
+                    </div>
+                </div>
+
+                <div class="tweet-card">
+                    <div class="tweet-header">
+                        <span class="tweet-author"><a href="https://x.com/treydtw" target="_blank">香蕉Banana
+                                @treydtw</a></span>
+                        <span class="tweet-meta"><span>👁️ 1.7k</span></span>
+                    </div>
+                    <div class="tweet-body">
+                        推荐了 <strong>cobalt.tools</strong> — 一个获取多平台视频的工具。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ 行业洞察 ═══ -->
+        <section id="insights">
+            <div class="deco-line"></div>
+            <h2>行业洞察</h2>
+            <p class="section-desc">关于 Web 未来、Agent 生态、MCP 协议的前瞻性观点。</p>
+
+            <div class="tweet-card">
+                <div class="tweet-header">
+                    <span class="tweet-author"><a href="https://x.com/wangray" target="_blank">Ray Wang
+                            @wangray</a></span>
+                    <span class="tweet-meta"><span>❤️ 245</span><span>🔄 52</span><span>👁️ 43k</span></span>
+                </div>
+                <div class="tweet-body">
+                    <strong>Web 正在长出第二套界面——给 AI Agent 用的</strong><br>
+                    同一周发生：Cloudflare 自动给网页生成 Markdown + Chrome 发布 WebMCP。一个解决「读」，一个解决「做」。Browser automation 全是过渡方案，未来
+                    Agent 直接调接口。网站的下一个竞争维度不是 SEO 是 <strong>AEO — Agent Engine Optimization</strong>。
+                </div>
+            </div>
+
+            <div class="tweet-card">
+                <div class="tweet-header">
+                    <span class="tweet-author"><a href="https://x.com/dingyi" target="_blank">Ding @dingyi</a></span>
+                    <span class="tweet-meta"><span>❤️ 159</span><span>🔄 33</span><span>👁️ 22.6k</span></span>
+                </div>
+                <div class="tweet-body">
+                    <strong>WebMCP 预览版发布</strong>，已有 demo 出现。不需要 agent 去查看浏览器，以后浏览器本身就是 API。推荐了 <a
+                        href="https://github.com/Doriandarko/webmcp-starter" target="_blank"
+                        style="color:var(--navy)">webmcp-starter</a> 项目。
+                </div>
+            </div>
+
+            <div class="callout callout-navy">
+                <strong>趋势判断</strong><br>
+                Web 2 给人用，Web3 炒了个寂寞。真正的下一代 Web，是给 Agent 用的。谁先把自己的能力暴露成 MCP 工具，谁就能被 Agent 优先调用。
+            </div>
+        </section>
+
+        <!-- ═══ 知识管理 & NotebookLM ═══ -->
+        <section id="knowledge">
+            <div class="deco-line"></div>
+            <h2>知识管理 & NotebookLM</h2>
+            <p class="section-desc">将各种内容源（微信、网页、视频、电子书）汇入 NotebookLM，生成播客、PPT、思维导图等多格式输出。</p>
+
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-label">多源处理器</div>
+                    <h4><a href="https://github.com/joeseesun/anything-to-notebooklm"
+                            target="_blank">anything-to-notebooklm</a></h4>
+                    <p>Claude Skill：用自然语言把任何内容变成任何格式。支持 15+ 种输入（微信文章、网页、YouTube、PDF、EPUB、图片、音频等）→ 自动上传到 NotebookLM →
+                        生成播客 / PPT / 思维导图 / Quiz。</p>
+                    <div class="features">
+                        <span class="tag terracotta">Claude Skill</span>
+                        <span class="tag mustard">15+ 格式</span>
+                        <span class="tag">全自动</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-label">微信专用</div>
+                    <h4><a href="https://github.com/zstmfhy/wechat-to-notebooklm"
+                            target="_blank">wechat-to-notebooklm</a></h4>
+                    <p>一键将微信公众号文章同步到 NotebookLM。自动抓取文章 → 转 Markdown → 创建 Notebook → 上传。可生成播客、视频、Quiz，支持交互式问答。</p>
+                    <div class="features">
+                        <span class="tag terracotta">Claude Skill</span>
+                        <span class="tag">一键同步</span>
+                        <span class="tag green">播客生成</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="callout callout-mustard">
+                <strong>来自 @MinLiBuilds 的实践</strong><br>
+                NotebookLM 支持最多 300 个文件。可以直接用 NotebookLM 来做 RAG，省去繁琐的搭建步骤。配合 Gemini GEM 注入 System
+                Instructions，可以克隆任何公开信息丰富的大神们的数字分身。
+            </div>
+        </section>
+
+        <!-- ═══ 设计与开发 ═══ -->
+        <section id="design">
+            <div class="deco-line"></div>
+            <h2>设计与开发工具</h2>
+            <p class="section-desc">HTML PPT 制作、网站图标生成、图标资源库等开发辅助工具。</p>
+
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-label">HTML PPT</div>
+                    <h4><a href="https://github.com/andyhuo520/html-ppt-designer" target="_blank">html-ppt-designer
+                            v5.2</a></h4>
+                    <p>智能演示文稿设计器。17 种专业视觉风格、LLM 智能设计、多源配图系统（Unsplash / AI 生成 / Excalidraw）、6 种翻页动画、TTS 配音视频导出、内嵌字幕。</p>
+                    <div class="features">
+                        <span class="tag terracotta">17 种风格</span>
+                        <span class="tag mustard">AI 设计</span>
+                        <span class="tag">视频导出</span>
+                        <span class="tag">TTS 配音</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-label">图标生成</div>
+                    <h4><a href="https://github.com/1939869736luosi/favicon-generator-guide"
+                            target="_blank">favicon-generator-guide</a></h4>
+                    <p>Favicon 图标生成方案合集，4 种方法：AI 直接生成、AI 重绘变体、黑白极简、开源图标库。附 Prompt 模板和实战案例，适用于 Cloudflare Pages / Vercel
+                        / GitHub Pages。</p>
+                    <div class="features">
+                        <span class="tag">4 种方案</span>
+                        <span class="tag mustard">含 Prompt</span>
+                        <span class="tag">实战案例</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-divider"></div>
+            <h3>图标资源</h3>
+
+            <div class="full-card">
+                <div class="project-label">图标库</div>
+                <h4><a href="https://icon-sets.iconify.design/" target="_blank"
+                        style="color:var(--text); text-decoration:none; border-bottom: 1px solid transparent;">Iconify —
+                        开源图标集合</a></h4>
+                <p>
+                    最全的开源图标资源库。包含 200+ 图标集，涵盖 Material Design、UI 图标（16px / 24px / 32px）、多色图标、编程图标、品牌
+                    Logo、Emoji、旗帜、主题图标等。支持按集合浏览、搜索、直接使用 SVG / 组件代码。
+                </p>
+                <div class="features" style="margin-top: 10px;">
+                    <span class="tag terracotta">200+ 图标集</span>
+                    <span class="tag">SVG</span>
+                    <span class="tag">免费开源</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ 自媒体创作 ═══ -->
+        <section id="media">
+            <div class="deco-line"></div>
+            <h2>自媒体创作</h2>
+            <p class="section-desc">视频制作、内容搬运、AI Agent 驱动的创作工作流。</p>
+
+            <div class="tweet-card">
+                <div class="tweet-header">
+                    <span class="tweet-author"><a href="https://x.com/gxjdian" target="_blank">纯棉短裤 @gxjdian</a></span>
+                    <span class="tweet-meta"><span>5 条 Thread</span></span>
+                </div>
+                <div class="tweet-body">
+                    <strong>口播视频全自动化 Skills</strong>：只需录完视频，后续全自动——剪口播、语气词删除、生成字幕、合成字幕视频、变声视频、一键发布 YouTube。
+                </div>
+            </div>
+
+            <div class="tweet-card">
+                <div class="tweet-header">
+                    <span class="tweet-author"><a href="https://x.com/cj3214567667" target="_blank">白骏知识分享
+                            @cj3214567667</a></span>
+                </div>
+                <div class="tweet-body">
+                    <strong>快手百万博主影视解说搬运教程</strong>：从素材批量采集、AI + 手动伪原创剪辑（解说配音、动态字幕、转场特效、节奏调整），到过审技巧、矩阵养号、日产百条高效流程。
+                </div>
+            </div>
+
+            <div class="tweet-card">
+                <div class="tweet-header">
+                    <span class="tweet-author"><a href="https://x.com/imaxichuhai" target="_blank">阿西_出海
+                            @imaxichuhai</a></span>
+                </div>
+                <div class="tweet-body">
+                    <strong>Obsidian Skill 生成可视化手绘风结构图</strong>：一句话生成。可用来做配图、快速可视化理解知识点、制作口播白板内容。
+                </div>
+            </div>
+
+            <div class="full-card">
+                <div class="project-label">视频下载</div>
+                <h4><a href="https://cobalt.tools/" target="_blank"
+                        style="color:var(--text); text-decoration:none;">cobalt.tools</a></h4>
+                <p>多平台视频获取工具（来自 @treydtw 推荐），支持从各大视频平台下载内容。</p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <a href="index.html">← 返回 7天路线图</a> &nbsp;·&nbsp; 2026
+        </div>
+    </footer>
+
+    <script>
+        function toggleCollapse(id) {
+            const el = document.getElementById(id);
+            const toggle = el.previousElementSibling;
+            el.classList.toggle('open');
+            toggle.textContent = el.classList.contains('open')
+                ? '收起 ▴'
+                : '展开更多推文 ▾';
+        }
+
+        // Smooth scroll for nav pills
+        document.querySelectorAll('.pill[href^="#"]').forEach(pill => {
+            pill.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(pill.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

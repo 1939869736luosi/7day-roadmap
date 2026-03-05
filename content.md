@@ -1,36 +1,66 @@
 # 7天 AI 工具链全栈进化路线
 
+终极目标：
+
+1：半年时间全力冲刺让 ai 帮助自己赚到更多的钱和拿到尽可能大的结果
+
+2：尽可能完成进化与同龄人拉开十倍百倍的差距和维度并且极尽的展示自己的进化让别人感到焦虑和羡慕崇拜来打造个人品牌
+
+3：打造可复利的人生系统飞轮始终以最小的代价走在时代前沿
+
 从 Obsidian 数据库到自媒体 IP 打造，用 MCP、Skills、Workflow 构建你的个人信息操作系统。资产沉淀最大化，业务复利持续化，让 AI 无处不在 —— Always AI Native。
 
 ---
 
-## 六大核心目标
+## 八大核心目标
 
 ### 目标 01 — 数据库搭建在 Obsidian
 
 包括微信聊天记录、个人上下文、各种会议、项目
 
-### 目标 02 — 每日信息自动抓取 → 多格式输出
+### 目标 02 — 学会更多的 MCP → 沉淀为 Workflow 和 Skills
+
+学会更多的 MCP，然后沉淀为 Workflow 和 Skills
+
+### 目标 03 — 学会 Raycast 和 Whisper Flow
+
+学会 Raycast 和 Whisper Flow，提升日常操作效率
+
+### 目标 04 — 信息传播 Skills
+
+用到 Antigravity 和 ChatPRD 的 MCP、Granola 的 MCP、v0 的 MCP、CF 的 CLI（或者 Railway 的 CLI），再结合 UI/UX Pro Max和 vercel 的 react 优化的两个Skills，以及三个已经安装的 obsidian 的 skills 和再调研一下 obsidian 官方的 skills 最终沉淀为一个或者两个Skills然后这个skills 要做好交互的设计保证一次干成 问足够做的问题做足够多的交互就能保证最后的质量
+
+### 目标 05 — 自媒体 IP 和第二大脑打造（Obsidian 和 NotebookLM）
+
+六个推文内容再融合小满的转录文本
+
+打造个人第二大脑
+
+自媒体 IP 第二大脑
+
+人生决策第二大脑
+
+牛人决策大脑
+
+标题文案 Skills（参照文案）。
+
+善用 [AI Toolkit Collection](https://ai-toolkit-collection.pages.dev/) 里面大量很好的 YouTube 和剪辑 Skills，去给自己的视频添加背书和活力和 YouTube 元素。
+
+### 目标 06 — OKR 复盘 & 公开学习
+
+填充每一天的 OKR，对前面所有的计划进行回顾复习。
+
+然后公开自己的学习计划和学习成果以及整理并且沉淀的物料，用于个人品牌打造。
+
+### 目标 07 — 每日信息自动抓取 → 多格式输出
 
 每天的聊天记录和 RSS 和各种信息源，每天自动抓取输出为：Canvas（Obsidian 的 skills）、播客、网页、信息图、PPT、思维导图、视频概览（今天的各种剪辑 skills 和 Remotion 的 skills）
 
 > RSS 的目的是解放注意力
 
-### 目标 03 — 学会更多的 MCP → 沉淀为 Workflow 和 Skills
+### 目标 08 — 学编程 & 实战：发布个人播客网站
 
-学会更多的 MCP，然后沉淀为 Workflow 和 Skills
-
-### 目标 04 — 学会 Raycast 和 Whisper Flow
-
-学会 Raycast 和 Whisper Flow，提升日常操作效率
-
-### 目标 05 — 信息传播 Skills
-
-用到 Antigravity 和 ChatPRD 的 MCP、Granola 的 MCP、v0 的 MCP、CF 的 CLI（或者 Railway 的 CLI），甚至需要 Qwen TTS 或者配图 API，再结合 UI/UX Pro Max 这个 Skills，最终沉淀为 Skills
-
-### 目标 06 — 自媒体 IP
-
-标题文案 Skills（参照文案）。善用 [AI Toolkit Collection](https://ai-toolkit-collection.pages.dev/) 里面大量很好的 YouTube 和剪辑 Skills，去给自己的视频添加背书和活力和 YouTube 元素。
+根据 [Vibe Guide](https://vibe-guide.pages.dev/) 学习编程，然后实战：用 Supabase、Railway、v0、ChatPRD 和 Cloudflare 把个人的本地知识库和项目库发布为个人播客网站。
 
 ---
 
@@ -67,7 +97,7 @@
 - 信息源接入：每天的聊天记录和 RSS 和各种信息源，自动抓取流程搭建
 - 输出格式逐个跑通：Canvas（Obsidian 的 skills）、播客、网页、信息图、PPT、思维导图
 - 视频概览输出（结合剪辑 Skills 和 Remotion Skills）
-- 整条管线串联：信息源 → 抓取 → 多格式输出，沉淀为 Workflow/Skills
+- 整条管线串联：信息源 → 抓取 → 多格式输出，沉淀45 Workflow/Skills
 
 > RSS 的目的是解放注意力
 
@@ -84,69 +114,3 @@
 - 信息传播 Skills 最终整合（Antigravity + ChatPRD + Granola + v0 + CF/Railway → 完整工作流）
 - 所有 Workflow 和 Skills 文件规范化（统一格式、写好文档）
 - 跑通一个完整的端到端 Demo：从信息抓取 → 内容生成 → 多格式输出 → 发布
-
-补充的混乱的链接：
-
-[https://icon-sets.iconify.design/](https://icon-sets.iconify.design/)
-
-[https://x.com/xiaoerzhan/status/2023730648264175805?s=20](https://x.com/xiaoerzhan/status/2023730648264175805?s=20)
-
-[https://x.com/HuoQubot/status/2023417528941482056?s=20](https://x.com/HuoQubot/status/2023417528941482056?s=20)
-
-[https://x.com/FLMdongtianfudi/status/2023366878341824817?s=20](https://x.com/FLMdongtianfudi/status/2023366878341824817?s=20)
-
-[https://x.com/gxjdian/status/2023662206186123627?s=20](https://x.com/gxjdian/status/2023662206186123627?s=20)
-
-[https://x.com/FFEE_2025/status/2023319952414150850?s=20](https://x.com/FFEE_2025/status/2023319952414150850?s=20)
-
-[https://x.com/vista8/status/2021240338908876854?s=20](https://x.com/vista8/status/2021240338908876854?s=20)
-
-[https://x.com/imaxichuhai/status/2022941482567585908?s=20](https://x.com/imaxichuhai/status/2022941482567585908?s=20)
-
-[https://x.com/runes_leo/status/2023245248303141296?s=20](https://x.com/runes_leo/status/2023245248303141296?s=20)
-
-[https://x.com/sitinme/status/2023194305251467317?s=20](https://x.com/sitinme/status/2023194305251467317?s=20)
-
-[https://x.com/Assassin_Malvo/status/2023226526762926532?s=20](https://x.com/Assassin_Malvo/status/2023226526762926532?s=20)
-
-[https://x.com/chg80333/status/2023312958655541602?s=20](https://x.com/chg80333/status/2023312958655541602?s=20)
-
-[https://x.com/_miaoz_/status/2023248910278672884?s=20](https://x.com/_miaoz_/status/2023248910278672884?s=20)
-
-[https://x.com/runes_leo/status/2023245248303141296?s=20](https://x.com/runes_leo/status/2023245248303141296?s=20)
-
-[https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-danger-x-to-markdown](https://github.com/JimLiu/baoyu-skills/tree/main/skills/baoyu-danger-x-to-markdown)
-[https://x.com/ohxiyu/status/2023582714281316515?s=46](https://x.com/ohxiyu/status/2023582714281316515?s=46)
-[https://x.com/cj3214567667/status/2023780577783222714?s=46](https://x.com/cj3214567667/status/2023780577783222714?s=46)
-
-[https://x.com/QingQ77/status/2022977938099150885?s=20](https://x.com/QingQ77/status/2022977938099150885?s=20)
-
-[https://x.com/grok/status/2023037255032488123?s=20](https://x.com/grok/status/2023037255032488123?s=20)
-
-<https://x.com/MinLiBuilds/status/2022466311557911001?s=20>
-
-<https://x.com/wangray/status/2022494114751877248?s=20>
-
-<https://x.com/dingyi/status/2022494167134539822?s=20>
-
-<https://x.com/treydtw/status/2022703985816490143?s=20>
-
-<https://github.com/1939869736luosi/x-tweet-archiver>
-
-<https://github.com/1939869736luosi/wechat-backup-tools>
-
-<https://github.com/1939869736luosi/favicon-generator-guide>
-
-<https://github.com/andyhuo520/html-ppt-designer>
-
-<https://github.com/dontbesilent2025/extract-getnote-articles>
-
-<https://github.com/iamzifei/wechat-article-formatter-skill>
-
-<https://github.com/BND-1/wechat_article_skills>
-
-<https://github.com/joeseesun/anything-to-notebooklm>
-
-<https://github.com/zstmfhy/wechat-to-notebooklm>
-
-<https://github.com/qiye45/wechatDownload>
